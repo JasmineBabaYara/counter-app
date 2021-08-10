@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './index.css' 
+import Counter from './Counter'
 
 class App extends Component{
   constructor(){
@@ -25,13 +26,11 @@ class App extends Component{
 
   render(){
     return(
-      <div>
-        <span className="num">{this.state.num}</span>
-        <div className="btn">
-          <button className="start-btn" onClick={this.addClick}>Add</button>
-          <button className="reset-btn" onClick={this.resetClick}>Reset</button>
-        </div>
-      </div>
+      <Counter 
+        addClick={this.addClick}
+        resetClick={this.resetClick}
+        data={this.state}
+      />
     )
   }
 }
